@@ -16,7 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from app01 import views
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('app01.urls')),
+    url(r'^get_json/', views.get_json),
+    url(r'^do_json/', views.do_json),
 ]

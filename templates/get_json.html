@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+{#            alert('222');#}
+            var $get_json=$('#get');
+            $get_json.click(function () {
+                // 通过按钮发送ajax请求，获取数据
+
+{#                $.ajax({#}
+{#                    url:'/do_json'#}
+{#                })#}
+{#                    .success(function (datas) {#}
+{#                        // datas : js对象 ， 服务器返回的数据#}
+{#                         alert(datas);#}
+{#                         $("#emp").empty()#}
+{#                             .append("<li>姓名："+ datas.name+" </li>")#}
+{#                             .append("<li>年龄："+ datas.age+" </li>")#}
+{#                             .append("<li>性别："+ datas.sex+" </li>")#}
+{#                             .append("<li>工资："+ datas.salary+" </li>")#}
+{##}
+{#                    })#}
+                // ajax 的get（请求地址，回调函数）封装
+                    $.get('/do_json',function (datas) {
+                        alert(datas);
+                        $('#emp').empty()
+                            .append("<li>姓名："+ datas.name+" </li>")
+                            .append("<li>年龄："+ datas.age+" </li>")
+                            .append("<li>性别："+ datas.sex+" </li>")
+                            .append("<li>工资："+ datas.salary+" </li>")
+
+                    })
+
+
+            })
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+<h3>请求json数据</h3>
+<input type="submit" value="获取json数据" id="get">
+<ul id="emp"></ul>
+</body>
+</html>
