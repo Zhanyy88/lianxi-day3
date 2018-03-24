@@ -20,6 +20,15 @@ from app01 import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^get_json/', views.get_json),
-    url(r'^do_json/', views.do_json),
+    #  ======  JsonResponse案例===============
+    url(r'^get_json/$', views.get_json),
+    url(r'^do_json/$', views.do_json),
+
+    # =========Cookie案例====================
+    url(r'^set_cookie/$',views.set_cookie),
+    url(r'^get_cookie/$',views.get_cookie),
+
+    # =========Session案例====================
+    url(r'^set_session/$',views.set_session),
+    url(r'^get_session/$',views.get_session),
 ]

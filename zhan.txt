@@ -1,1 +1,5 @@
-1.Django day3 的练习
+1.Django day3 的练习=====JsonResponse数据案例
+
+2.=======Cookie案例
+
+3.=======Session案例
